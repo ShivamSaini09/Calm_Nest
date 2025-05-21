@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calm Nest - Mental Health Assessment</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="welcomePage" class="welcome-container">
+    <img src="logo/Calm_Nest.png" alt="Calm Nest Icon" class="welcome-icon" />
+    <h1>Welcome to Calm Nest</h1>
+    <p>
+      We're here to support your mental well-being. Click below to begin your
+      mental health assessment.
+    </p>
+    <button class="welcome-button" onclick="startAssessment()">
+      Start Your Mental Health Assessment
+    </button>
+  </div>
+
+  <div id="assessmentPage" class="container">
+    <img src="logo/Calm_Nest.png" alt="Calm Nest Icon" class="assessment-icon" />
+    <h1>Calm Nest - Mental Health Assessment</h1>
+    <form id="assessmentForm">
+      <div class="question" data-question="1">
+        <p>1. I found myself getting upset by quite trivial things.</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q1" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q1" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q1" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="2">
+        <p>2. I was aware of dryness of my mouth.</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q2" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q2" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q2" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="3">
+        <p>3. I couldn't seem to experience any positive feeling at all.</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q3" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q3" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q3" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="4">
+        <p>
+          4. I experienced breathing difficulty (eg, excessively rapid
+          breathing, breathlessness in the absence of physical exertion).
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q4" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q4" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q4" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="5">
+        <p>5. I just couldn't seem to get going.</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q5" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q5" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q5" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="6">
+        <p>6. I tended to over-react to situations.</p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q6" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q6" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q6" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="7">
+        <p>7. I had a feeling of shakiness (eg, legs going to give way).</p>
+        <div class="options">
+          <label><input type="radio" name="q7" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q7" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q7" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q7" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="8">
+        <p>8. I found it difficult to relax.</p>
+        <div class="options">
+          <label><input type="radio" name="q8" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q8" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q8" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q8" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="9">
+        <p>
+          9. I found myself in situations that made me so anxious I was most
+          relieved when they ended.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q9" value="0" /> Did not apply to me at
+            all</label>
+          <label><input type="radio" name="q9" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q9" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q9" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="10">
+        <p>10. I felt that I had nothing to look forward to.</p>
+        <div class="options">
+          <label><input type="radio" name="q10" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q10" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q10" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q10" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="11">
+        <p>11. I found myself getting upset rather easily.</p>
+        <div class="options">
+          <label><input type="radio" name="q11" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q11" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q11" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q11" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="12">
+        <p>12. I felt that I was using a lot of nervous energy.</p>
+        <div class="options">
+          <label><input type="radio" name="q12" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q12" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q12" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q12" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="13">
+        <p>13. I felt sad and depressed.</p>
+        <div class="options">
+          <label><input type="radio" name="q13" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q13" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q13" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q13" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="14">
+        <p>
+          14. I found myself getting impatient when I was delayed in any way
+          (eg, elevators, traffic lights, being kept waiting).
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q14" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q14" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q14" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q14" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="15">
+        <p>15. I had a feeling of faintness.</p>
+        <div class="options">
+          <label><input type="radio" name="q15" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q15" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q15" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q15" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="16">
+        <p>16. I felt that I had lost interest in just about everything.</p>
+        <div class="options">
+          <label><input type="radio" name="q16" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q16" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q16" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q16" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="17">
+        <p>17. I felt I wasn't worth much as a person.</p>
+        <div class="options">
+          <label><input type="radio" name="q17" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q17" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q17" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q17" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="18">
+        <p>18. I felt that I was rather touchy.</p>
+        <div class="options">
+          <label><input type="radio" name="q18" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q18" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q18" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q18" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="19">
+        <p>
+          19. I perspired noticeably (eg, hands sweaty) in the absence of high
+          temperatures or physical exertion.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q19" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q19" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q19" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q19" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="20">
+        <p>20. I felt scared without any good reason.</p>
+        <div class="options">
+          <label><input type="radio" name="q20" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q20" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q20" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q20" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="21">
+        <p>21. I felt that life wasn't worthwhile.</p>
+        <div class="options">
+          <label><input type="radio" name="q21" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q21" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q21" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q21" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="22">
+        <p>22. I found it hard to wind down.</p>
+        <div class="options">
+          <label><input type="radio" name="q22" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q22" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q22" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q22" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="23">
+        <p>23. I had difficulty in swallowing.</p>
+        <div class="options">
+          <label><input type="radio" name="q23" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q23" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q23" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q23" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="24">
+        <p>
+          24. I couldn't seem to get any enjoyment out of the things I did.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q24" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q24" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q24" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q24" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="25">
+        <p>
+          25. I was aware of the action of my heart in the absence of physical
+          exertion (eg, sense of heart rate increase, heart missing a beat).
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q25" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q25" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q25" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q25" value="3" /> Applied to me very
+            much, or most of sacerdote
+            >
+        </div>
+      </div>
+      <div class="question" data-question="26">
+        <p>26. I felt down-hearted and blue.</p>
+        <div class="options">
+          <label><input type="radio" name="q26" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q26" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q26" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q26" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="27">
+        <p>27. I found that I was very irritable.</p>
+        <div class="options">
+          <label><input type="radio" name="q27" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q27" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q27" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q27" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="28">
+        <p>28. I felt I was close to panic.</p>
+        <div class="options">
+          <label><input type="radio" name="q28" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q28" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q28" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q28" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="29">
+        <p>29. I found it hard to calm down after something upset me.</p>
+        <div class="options">
+          <label><input type="radio" name="q29" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q29" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q29" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q29" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="30">
+        <p>
+          30. I feared that I would be "thrown" by some trivial but unfamiliar
+          task.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q30" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q30" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q30" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q30" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="31">
+        <p>31. I was unable to become enthusiastic about anything.</p>
+        <div class="options">
+          <label><input type="radio" name="q31" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q31" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q31" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q31" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="32">
+        <p>
+          32. I found it difficult to tolerate interruptions to what I was
+          doing.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q32" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q32" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q32" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q32" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="33">
+        <p>33. I was in a state of nervous tension.</p>
+        <div class="options">
+          <label><input type="radio" name="q33" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q33" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q33" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q33" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="34">
+        <p>34. I felt I was pretty worthless.</p>
+        <div class="options">
+          <label><input type="radio" name="q34" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q34" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q34" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q34" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="35">
+        <p>
+          35. I was intolerant of anything that kept me from getting on with
+          what I was doing.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q35" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q35" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q35" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q35" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="36">
+        <p>36. I felt terrified.</p>
+        <div class="options">
+          <label><input type="radio" name="q36" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q36" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q36" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q36" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="37">
+        <p>37. I could see nothing in the future to be hopeful about.</p>
+        <div class="options">
+          <label><input type="radio" name="q37" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q37" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q37" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q37" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="38">
+        <p>38. I felt that life was meaningless.</p>
+        <div class="options">
+          <label><input type="radio" name="q38" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q38" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q38" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q38" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="39">
+        <p>39. I found myself getting agitated.</p>
+        <div class="options">
+          <label><input type="radio" name="q39" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q39" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q39" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q39" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="40">
+        <p>
+          40. I was worried about situations in which I might panic and make a
+          fool of myself.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q40" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q40" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q40" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q40" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="41">
+        <p>41. I experienced trembling (eg, in the hands).</p>
+        <div class="options">
+          <label><input type="radio" name="q41" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q41" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q41" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q41" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <div class="question" data-question="42">
+        <p>
+          42. I found it difficult to work up the initiative to do things.
+        </p>
+        <div class="options">
+          <label><input type="radio" name="q42" value="0" /> Did not apply to me
+            at all</label>
+          <label><input type="radio" name="q42" value="1" /> Applied to me to some
+            degree, or some of the time</label>
+          <label><input type="radio" name="q42" value="2" /> Applied to me to a
+            considerable degree, or a good part of the time</label>
+          <label><input type="radio" name="q42" value="3" /> Applied to me very
+            much, or most of the time</label>
+        </div>
+      </div>
+      <p id="errorMessage" class="error">
+        Please answer all questions before submitting.
+      </p>
+      <button type="submit">Submit Answers</button>
+    </form>
+    <div id="resultPage" style="display: none;">
+      <h2>Your Mental Health Assessment Results</h2>
+      <p id="anxietyResult"></p>
+      <p id="depressionResult"></p>
+      <p id="stressResult"></p>
+      <button onclick="location.reload()">Start Again</button>
+    </div>
+
+  </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

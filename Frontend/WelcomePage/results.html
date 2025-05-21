@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .result-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result-box">
+        <h2>Your Mental Health Assessment Results</h2>
+        <p id="anxietyResult"></p>
+        <p id="depressionResult"></p>
+        <p id="stressResult"></p>
+        <br />
+        <button onclick="window.location.href='index.html'">Retake Assessment</button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const anxiety = parseInt(params.get("anxiety"));
+        const depression = parseInt(params.get("depression"));
+        const stress = parseInt(params.get("stress"));
+
+        function getLabel(score) {
+            switch (score) {
+                case 0: return "Extremely Severe";
+                case 1: return "Severe";
+                case 2: return "Moderate";
+                case 3: return "Mild";
+                case 4: return "Normal"; 
+                default: return "Normal";
+            }
+        }
+
+        document.getElementById("anxietyResult").innerText =
+            "Anxiety Level : " + getLabel(anxiety);
+
+        document.getElementById("depressionResult").innerText =
+            "Depression Level: " + getLabel(depression);
+
+        document.getElementById("stressResult").innerText =
+            "Stress Level: " + getLabel(stress);
+    </script>
+
+
+
+
+</body>
+
+
+</html>
