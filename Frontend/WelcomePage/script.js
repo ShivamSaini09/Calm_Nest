@@ -23,14 +23,12 @@ document.getElementById("assessmentForm").addEventListener("submit", function (e
     errorMessage.style.display = "none";
   }
 
-  // Collect all 42 answers
   const answers = {};
   for (let i = 1; i <= 42; i++) {
     const value = document.querySelector(`input[name="q${i}"]:checked`).value;
     answers[`q${i}`] = parseInt(value);
   }
 
-  // Send answers to backend
   fetch("/api/predict", {
     method: "POST",
     headers: {
