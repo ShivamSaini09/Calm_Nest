@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: calm-nest
+    runtime: node
+    buildCommand: |
+      npm install
+      ./setup.sh
+    startCommand: node server.js
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.8
