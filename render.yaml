@@ -1,11 +1,12 @@
 services:
   - type: web
     name: calm-nest
-    runtime: node
+    env: node
     buildCommand: |
-      npm install
-      ./setup.sh
-    startCommand: node server.js
+      npm install --prefix backend
+      pip install -r backend/requirements.txt
+    startCommand: node backend/app.js
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.8
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    autoDeploy: true
