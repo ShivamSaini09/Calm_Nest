@@ -3,32 +3,19 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Assessment Results</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .result-box {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="style2.css" />
 </head>
 
 <body>
     <div class="result-box">
         <h2>Your Mental Health Assessment Results</h2>
-        <p id="anxietyResult"></p>
-        <p id="depressionResult"></p>
-        <p id="stressResult"></p>
+
+        <div id="anxietySection"></div>
+        <div id="depressionSection"></div>
+        <div id="stressSection"></div>
+
         <br />
         <button onclick="window.location.href='index.html'">Retake Assessment</button>
     </div>
@@ -46,25 +33,55 @@
                 case 1: return "Severe";
                 case 2: return "Moderate";
                 case 3: return "Mild";
-                case 4: return "Normal"; 
+                case 4: return "Normal";
                 default: return "Normal";
             }
         }
 
-        document.getElementById("anxietyResult").innerText =
-            "Anxiety Level : " + getLabel(anxiety);
+        function getAdvice(level, type) {
+            const strategies = {
+                "Anxiety": {
+                    "Extremely Severe": "Seek professional help immediately. Practice deep breathing and avoid triggers.",
+                    "Severe": "Start CBT therapy or counseling. Limit caffeine and practice mindfulness daily.",
+                    "Moderate": "Incorporate regular exercise, guided meditation, and journaling into your routine.",
+                    "Mild": "Use relaxation techniques like yoga or deep breathing when feeling anxious.",
+                    "Normal": "Keep maintaining healthy habits and check in with yourself regularly."
+                },
+                "Depression": {
+                    "Extremely Severe": "Contact a therapist immediately. You're not alone. Consider talking to close ones.",
+                    "Severe": "Seek therapy and stay socially connected. Avoid isolating yourself.",
+                    "Moderate": "Use positive affirmations and stay active. Focus on small achievable goals.",
+                    "Mild": "Maintain routines, stay connected, and engage in hobbies.",
+                    "Normal": "Continue positive habits and monitor mood changes."
+                },
+                "Stress": {
+                    "Extremely Severe": "Consult a mental health expert. Consider reducing responsibilities and resting.",
+                    "Severe": "Engage in stress-reducing activities and set boundaries in daily tasks.",
+                    "Moderate": "Use time management and relaxation techniques like breathing or nature walks.",
+                    "Mild": "Practice gratitude journaling and ensure you have downtime daily.",
+                    "Normal": "Maintain a healthy balance in work and life."
+                }
+            };
 
-        document.getElementById("depressionResult").innerText =
-            "Depression Level: " + getLabel(depression);
+            return strategies[type][level] || "Maintain healthy habits.";
+        }
 
-        document.getElementById("stressResult").innerText =
-            "Stress Level: " + getLabel(stress);
+        function renderResult(type, score) {
+            const label = getLabel(score);
+            const advice = getAdvice(label, type);
+
+            return `
+                <div class="result-section">
+                    <h3>${type} Level: ${label}</h3>
+                    <p><strong>Coping Strategies:</strong> ${advice}</p>
+                </div>
+            `;
+        }
+
+        document.getElementById("anxietySection").innerHTML = renderResult("Anxiety", anxiety);
+        document.getElementById("depressionSection").innerHTML = renderResult("Depression", depression);
+        document.getElementById("stressSection").innerHTML = renderResult("Stress", stress);
     </script>
-
-
-
-
 </body>
-
 
 </html>
