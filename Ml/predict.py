@@ -3,17 +3,31 @@ import joblib
 import json
 import sys
 
-args = list(map(int, sys.argv[1:]))
-ax_input = args[:14]
-dp_input = args[14:28]
-st_input = args[28:]
+# Get all 42 integer responses from command-line arguments
+responses = list(map(int, sys.argv[1:]))
 
+# DASS-42 question mapping (1-based to 0-based index correction)
+DASS_keys = {
+    'Depression': [3, 5, 10, 13, 16, 17, 21, 24, 26, 31, 34, 37, 38, 42],
+    'Anxiety':    [2, 4, 7, 9, 15, 19, 20, 23, 25, 28, 30, 36, 40, 41],
+    'Stress':     [1, 6, 8, 11, 12, 14, 18, 22, 27, 29, 32, 33, 35, 39]
+}
+
+# Convert to 0-based indices
+DASS_keys = {k: [i - 1 for i in v] for k, v in DASS_keys.items()}
+
+# Extract corresponding inputs
+dp_input = [responses[i] for i in DASS_keys['Depression']]
+ax_input = [responses[i] for i in DASS_keys['Anxiety']]
+st_input = [responses[i] for i in DASS_keys['Stress']]
+
+# Load models
 base_path = os.path.dirname(__file__)
-
 ax_model = joblib.load(os.path.join(base_path, "ax_best_model.pkl"))
 dp_model = joblib.load(os.path.join(base_path, "dp_best_model.pkl"))
 st_model = joblib.load(os.path.join(base_path, "st_best_model.pkl"))
 
+# Predict and format output
 result = {
     "anxiety": int(ax_model.predict([ax_input])[0]),
     "depression": int(dp_model.predict([dp_input])[0]),
