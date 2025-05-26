@@ -2,10 +2,11 @@ services:
   - type: web
     name: calm-nest
     env: node
-    buildCommand: ./setup.sh
+    buildCommand: |
+      pip3 install --upgrade pip
+      pip3 install -r requirements.txt
+      npm install
     startCommand: node backend/app.js
     envVars:
       - key: PYTHONPATH
-        value: Ml
-      - key: PATH
-        value: /opt/render/project/.venv/bin:$PATH
+        value: ./Ml
