@@ -6,4 +6,6 @@ services:
     startCommand: node backend/app.js
     envVars:
       - key: PYTHONPATH
-        value: backend  
+        value: Ml
+      - key: PATH
+        value: /opt/render/project/.venv/bin:$PATH
