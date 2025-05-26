@@ -38,44 +38,89 @@
             }
         }
 
-        function getAdvice(level, type) {
-            const strategies = {
+        function getDetailedReport(type, level) {
+            const reports = {
                 "Anxiety": {
-                    "Extremely Severe": "Seek professional help immediately. Practice deep breathing and avoid triggers.",
-                    "Severe": "Start CBT therapy or counseling. Limit caffeine and practice mindfulness daily.",
-                    "Moderate": "Incorporate regular exercise, guided meditation, and journaling into your routine.",
-                    "Mild": "Use relaxation techniques like yoga or deep breathing when feeling anxious.",
-                    "Normal": "Keep maintaining healthy habits and check in with yourself regularly."
+                    "Extremely Severe": {
+                        summary: "You are experiencing extremely high levels of anxiety. It may interfere significantly with your daily life and wellbeing.",
+                        strategies: "Please seek immediate help from a mental health professional. Try grounding exercises, mindfulness meditation, and avoid stimulants like caffeine. Prioritize sleep and supportive social contact."
+                    },
+                    "Severe": {
+                        summary: "You have severe anxiety symptoms. This may impact your sleep, focus, and social interactions.",
+                        strategies: "Therapy such as CBT is strongly recommended. Practice regular breathing techniques, exercise daily, and try reducing screen time before bed."
+                    },
+                    "Moderate": {
+                        summary: "You have moderate anxiety. It may affect you during high-stress situations but can be manageable.",
+                        strategies: "Engage in daily movement like walking or yoga. Journaling and spending time with loved ones can ease symptoms."
+                    },
+                    "Mild": {
+                        summary: "You may experience mild anxiety occasionally, especially during stress or pressure.",
+                        strategies: "Try progressive muscle relaxation, listening to calming music, and staying organized to reduce anxious thoughts."
+                    },
+                    "Normal": {
+                        summary: "Your anxiety levels are in the normal range. You're currently managing stress well.",
+                        strategies: "Continue healthy lifestyle habits, mindfulness, and self-check-ins to stay balanced."
+                    }
                 },
                 "Depression": {
-                    "Extremely Severe": "Contact a therapist immediately. You're not alone. Consider talking to close ones.",
-                    "Severe": "Seek therapy and stay socially connected. Avoid isolating yourself.",
-                    "Moderate": "Use positive affirmations and stay active. Focus on small achievable goals.",
-                    "Mild": "Maintain routines, stay connected, and engage in hobbies.",
-                    "Normal": "Continue positive habits and monitor mood changes."
+                    "Extremely Severe": {
+                        summary: "You are showing signs of extreme depression. This could be overwhelming and affect your ability to function.",
+                        strategies: "Reach out to a licensed therapist immediately. Lean on trusted support systems and consider medication if recommended by professionals."
+                    },
+                    "Severe": {
+                        summary: "You are experiencing severe depressive symptoms, which may lead to a sense of hopelessness or disconnection.",
+                        strategies: "Seek professional counseling. Practice a regular routine, get sunlight exposure, and try gentle physical activity daily."
+                    },
+                    "Moderate": {
+                        summary: "You have moderate depression, which may affect motivation or energy levels.",
+                        strategies: "Set small daily goals. Reflect on achievements. Stay socially connected, even with one friend or family member."
+                    },
+                    "Mild": {
+                        summary: "You show mild depressive signs that may surface during tough days or transitions.",
+                        strategies: "Keep a gratitude journal, listen to uplifting podcasts, and avoid excessive isolation."
+                    },
+                    "Normal": {
+                        summary: "Your depression score is in a healthy range. You're coping well with life challenges.",
+                        strategies: "Stay engaged with joyful activities and maintain self-care practices."
+                    }
                 },
                 "Stress": {
-                    "Extremely Severe": "Consult a mental health expert. Consider reducing responsibilities and resting.",
-                    "Severe": "Engage in stress-reducing activities and set boundaries in daily tasks.",
-                    "Moderate": "Use time management and relaxation techniques like breathing or nature walks.",
-                    "Mild": "Practice gratitude journaling and ensure you have downtime daily.",
-                    "Normal": "Maintain a healthy balance in work and life."
+                    "Extremely Severe": {
+                        summary: "You're under extreme stress, which may be harmful to your physical and mental health.",
+                        strategies: "Consider professional guidance. Reduce workload if possible. Use breathwork, take frequent breaks, and prioritize rest."
+                    },
+                    "Severe": {
+                        summary: "Your stress levels are very high and may cause exhaustion or burnout.",
+                        strategies: "Schedule downtime daily. Avoid multitasking. Try apps like Headspace or Calm for guided relaxation."
+                    },
+                    "Moderate": {
+                        summary: "You're dealing with moderate stress. While not overwhelming, it requires attention.",
+                        strategies: "Use a planner to manage tasks. Take short walks and engage in creative hobbies regularly."
+                    },
+                    "Mild": {
+                        summary: "You have mild stress levels, common in a busy lifestyle.",
+                        strategies: "Try digital detoxing, light exercise, and maintaining a consistent sleep schedule."
+                    },
+                    "Normal": {
+                        summary: "You are managing stress effectively. This is a good sign of emotional resilience.",
+                        strategies: "Continue setting boundaries, practicing self-awareness, and celebrating small victories."
+                    }
                 }
             };
 
-            return strategies[type][level] || "Maintain healthy habits.";
+            const report = reports[type][level];
+            return `
+                <div class="result-section">
+                    <h3>${type} Level: ${level}</h3>
+                    <p><strong>Summary:</strong> ${report.summary}</p>
+                    <p><strong>Coping Strategies:</strong> ${report.strategies}</p>
+                </div>
+            `;
         }
 
         function renderResult(type, score) {
-            const label = getLabel(score);
-            const advice = getAdvice(label, type);
-
-            return `
-                <div class="result-section">
-                    <h3>${type} Level: ${label}</h3>
-                    <p><strong>Coping Strategies:</strong> ${advice}</p>
-                </div>
-            `;
+            const level = getLabel(score);
+            return getDetailedReport(type, level);
         }
 
         document.getElementById("anxietySection").innerHTML = renderResult("Anxiety", anxiety);
