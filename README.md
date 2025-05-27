@@ -58,3 +58,56 @@ cd Calm_Nest
 cd backend
 node app.js
 
+
+**Mental Health Assessment Results Page**
+This HTML page dynamically generates a personalized mental health report based on a user's anxiety, depression, and stress levels. These levels are assessed using predefined values passed via URL parameters.
+
+💡 Purpose
+The purpose of this page is to provide users with a quick mental health overview and actionable coping strategies based on their responses in a prior assessment. It helps users better understand their current emotional state and suggests practical steps for self-care or professional support.
+
+⚙️ How It Works
+The page receives three mental health scores through URL query parameters:
+
+- anxiety
+- depression
+- stress
+
+**Each score is an integer (0 to 4), corresponding to:**
+
+0: Extremely Severe
+
+1: Severe
+
+2: Moderate
+
+3: Mild
+
+4: Normal
+
+**These scores are mapped to detailed descriptive labels and each label has:**
+
+- A summary explaining the user's current state.
+- Coping strategies tailored to that level of severity.
+
+**Using JavaScript, the scores are extracted and rendered dynamically into three sections:**
+
+- Anxiety Report
+- Depression Report
+- Stress Report
+
+**Each section includes:**
+
+- The severity level.
+- A brief explanation of what the level means.
+- Practical coping strategies users can apply in real life.
+
+🧩 Features
+✅ Dynamic rendering of results based on query parameters.
+
+✅ Personalized summaries and coping strategies.
+
+✅ Clear structure for future enhancements (e.g., adding more conditions or user input validation).
+
+✅ A button to retake the assessment (links back to index.html).
+
+
