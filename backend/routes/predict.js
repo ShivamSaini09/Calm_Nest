@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
     const pythonPath = path.join(__dirname, "../../Ml/predict.py");
 
 
-    const py = spawn("python", [pythonPath, ...args]);
+    const py = spawn("python3", [pythonPath, ...args]);
     let output = "";
     py.stdout.on("data", (data) => {
         output += data.toString();
