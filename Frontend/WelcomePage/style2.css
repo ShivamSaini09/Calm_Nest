@@ -1,47 +1,54 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #eef2f3;
+    background-color: #f2f2f2;
     padding: 40px;
+    margin: 0;
     text-align: center;
 }
 
 .result-box {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 40px;
+    border-radius: 12px;
     display: inline-block;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-    max-width: 800px;
-    margin: auto;
-}
-
-.result-section {
-    background-color: #f0f8ff;
-    padding: 15px;
-    margin-top: 20px;
-    border-left: 6px solid #4b9cd3;
-    border-radius: 6px;
-    text-align: left;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 90%;
 }
 
 h2 {
-    color: #2d3e50;
+    color: #2c3e50;
+    margin-bottom: 30px;
 }
 
-h3 {
-    color: #4b9cd3;
+.result-section {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.result-section h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.result-section p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 10px 20px;
-    background-color: #4b9cd3;
+    font-size: 16px;
+    background-color: #3498db;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #3a7ebf;
+    background-color: #2980b9;
 }
