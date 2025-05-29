@@ -59,7 +59,8 @@ cd backend
 node app.js
 
 
-**Mental Health Assessment Results Page**
+
+Mental Health Assessment Results Page
 This HTML page dynamically generates a personalized mental health report based on a user's anxiety, depression, and stress levels. These levels are assessed using predefined values passed via URL parameters.
 
 💡 Purpose
@@ -68,11 +69,13 @@ The purpose of this page is to provide users with a quick mental health overview
 ⚙️ How It Works
 The page receives three mental health scores through URL query parameters:
 
-- anxiety
-- depression
-- stress
+anxiety
 
-**Each score is an integer (0 to 4), corresponding to:**
+depression
+
+stress
+
+Each score is an integer (0 to 4), corresponding to:
 
 0: Extremely Severe
 
@@ -84,22 +87,27 @@ The page receives three mental health scores through URL query parameters:
 
 4: Normal
 
-**These scores are mapped to detailed descriptive labels and each label has:**
+These scores are mapped to detailed descriptive labels and each label has:
 
-- A summary explaining the user's current state.
-- Coping strategies tailored to that level of severity.
+A summary explaining the user's current state.
 
-**Using JavaScript, the scores are extracted and rendered dynamically into three sections:**
+Coping strategies tailored to that level of severity.
 
-- Anxiety Report
-- Depression Report
-- Stress Report
+Using JavaScript, the scores are extracted and rendered dynamically into three sections:
 
-**Each section includes:**
+Anxiety Report
 
-- The severity level.
-- A brief explanation of what the level means.
-- Practical coping strategies users can apply in real life.
+Depression Report
+
+Stress Report
+
+Each section includes:
+
+The severity level.
+
+A brief explanation of what the level means.
+
+Practical coping strategies users can apply in real life.
 
 🧩 Features
 ✅ Dynamic rendering of results based on query parameters.
@@ -109,5 +117,3 @@ The page receives three mental health scores through URL query parameters:
 ✅ Clear structure for future enhancements (e.g., adding more conditions or user input validation).
 
 ✅ A button to retake the assessment (links back to index.html).
-
-
