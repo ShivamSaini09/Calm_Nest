@@ -117,3 +117,32 @@ Practical coping strategies users can apply in real life.
 ✅ Clear structure for future enhancements (e.g., adding more conditions or user input validation).
 
 ✅ A button to retake the assessment (links back to index.html).
+
+
+## 🐳 Docker Instructions
+
+### Build Docker Image
+bash
+docker build -t calm_nest_image .
+
+
+### Run Docker Container
+bash
+docker run -p 3004:3000 calm-nest-app
+
+
+### Access the App
+Visit: http://localhost:3000
+
+### Test /api/student Route
+Visit: http://localhost:3004/api/student
+
+Expected output:
+json
+{
+  "name": "YOUR_NAME",
+  "studentId": "YOUR_STUDENT_ID"
+}
+
+
+---
