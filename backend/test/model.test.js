@@ -103,4 +103,86 @@ describe("ML Model Prediction Tests", () => {
                 done();
             });
     });
+
+    it("should return valid predictions when all inputs are 0 (minimum boundary)", (done) => {
+        const inputs = {};
+        for (let i = 1; i <= 42; i++) {
+            inputs[`q${i}`] = 0;
+        }
+
+        request(app)
+            .post("/api/predict")
+            .send(inputs)
+            .expect(200)
+            .end((err, res) => {
+                expect(res.body).to.have.all.keys("anxiety", "depression", "stress");
+                done();
+            });
+    });
+
+    it("should return 400 if input includes float values", (done) => {
+        const inputs = {};
+        for (let i = 1; i <= 42; i++) {
+            inputs[`q${i}`] = i === 5 ? 2.5 : 1;
+        }
+
+        request(app)
+            .post("/api/predict")
+            .send(inputs)
+            .expect(400)
+            .end((err, res) => {
+                expect(res.body).to.have.property("error");
+                done();
+            });
+    });
+
+    it("should return 400 if input includes boolean values", (done) => {
+        const inputs = {};
+        for (let i = 1; i <= 42; i++) {
+            inputs[`q${i}`] = i === 3 ? true : 1;
+        }
+
+        request(app)
+            .post("/api/predict")
+            .send(inputs)
+            .expect(400)
+            .end((err, res) => {
+                expect(res.body).to.have.property("error");
+                done();
+            });
+    });
+
+    it("should return valid predictions when all inputs are 1", (done) => {
+        const inputs = {};
+        for (let i = 1; i <= 42; i++) {
+            inputs[`q${i}`] = 1;
+        }
+
+        request(app)
+            .post("/api/predict")
+            .send(inputs)
+            .expect(200)
+            .end((err, res) => {
+                expect(res.body).to.have.all.keys("anxiety", "depression", "stress");
+                done();
+            });
+    });
+    it("should return 400 if any input is null", (done) => {
+        const inputs = {};
+        for (let i = 1; i <= 42; i++) {
+            inputs[`q${i}`] = i === 8 ? null : 1;
+        }
+
+        request(app)
+            .post("/api/predict")
+            .send(inputs)
+            .expect(400)
+            .end((err, res) => {
+                expect(res.body).to.have.property("error");
+                done();
+            });
+    });
+
+
+
 });
