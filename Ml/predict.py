@@ -3,9 +3,6 @@ import joblib
 import json
 import sys
 
-# Get all 42 integer responses from command-line arguments
-responses = list(map(int, sys.argv[1:]))
-
 # DASS-42 question mapping (1-based to 0-based index correction)
 DASS_keys = {
     'Depression': [3, 5, 10, 13, 16, 17, 21, 24, 26, 31, 34, 37, 38, 42],
@@ -16,7 +13,18 @@ DASS_keys = {
 # Convert to 0-based indices
 DASS_keys = {k: [i - 1 for i in v] for k, v in DASS_keys.items()}
 
-# Extract corresponding inputs
+try:
+    # Try to convert inputs to integers
+    responses = list(map(int, sys.argv[1:]))
+    
+    # Check input length
+    if len(responses) != 42:
+        raise ValueError("Expected 42 integer inputs.")
+except Exception as e:
+    print(f"Error: {e}", file=sys.stderr)
+    sys.exit(1)
+
+# Extract model-specific inputs
 dp_input = [responses[i] for i in DASS_keys['Depression']]
 ax_input = [responses[i] for i in DASS_keys['Anxiety']]
 st_input = [responses[i] for i in DASS_keys['Stress']]
@@ -27,7 +35,7 @@ ax_model = joblib.load(os.path.join(base_path, "ax_best_model.pkl"))
 dp_model = joblib.load(os.path.join(base_path, "dp_best_model.pkl"))
 st_model = joblib.load(os.path.join(base_path, "st_best_model.pkl"))
 
-# Predict and format output
+# Predict and return results
 result = {
     "anxiety": int(ax_model.predict([ax_input])[0]),
     "depression": int(dp_model.predict([dp_input])[0]),
