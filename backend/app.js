@@ -1,40 +1,3 @@
-
-// 
-// const express = require("express");
-// const cors = require("cors");
-// const path = require("path");
-
-
-// const app = express();
-
-
-// app.use(cors());
-// app.use(express.json());
-
-// app.use(express.static(path.join(__dirname, "../Frontend/WelcomePage")));
-
-// const predictRoutes = require("./routes/predict");
-// app.use("/api/predict", predictRoutes);
-
-
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../Frontend/WelcomePage/index.html"));
-// });
-
-// app.get('/api/student', (req, res) => {
-//   res.json({
-//     name: "Aarzoo",
-//     studentId: "s225095435"
-//   });
-// });
-
-// const PORT = process.env.PORT || 3000;
-// if (process.env.NODE_ENV !== "test") {
-//     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-// }
-
-// module.exports = app;
-//
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -55,7 +18,13 @@ app.get('/api/student', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+// ✅ Export the app for testing
+module.exports = app;
+
+// ✅ Only start server if run directly (not during tests)
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
+}
